@@ -1,14 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.UIElements;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Attacker : MonoBehaviour {
-    [SerializeField]
-    [Range( 0f, 5f )] 
-    private float speed = .5f;
+    private float currentSpeed = 0f;
 
     private void Update() {
-        transform.Translate( Vector2.left * (speed * Time.deltaTime) );
+        transform.Translate( Vector2.left * ( currentSpeed * Time.deltaTime ) );
+    }
+
+    public void SetMovementSpeed( float speed ) {
+        currentSpeed = speed;
     }
 }
