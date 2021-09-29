@@ -6,13 +6,13 @@ public class Health : MonoBehaviour {
 
     public void DealDamage( float damage ) {
         health -= damage;
-        if (health > 0) return;
+        if ( health > 0 ) return;
         TriggerDeathFX();
         Destroy( gameObject );
     }
     private void TriggerDeathFX() {
-        if (!deathFX)
-            return; 
+        if ( !deathFX )
+            return;
 
         Instantiate( deathFX, transform.position, Quaternion.identity );
     }

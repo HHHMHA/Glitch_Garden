@@ -11,7 +11,7 @@ public class DefenderButton : MonoBehaviour {
     
     public void ToggleSelected() {
         var buttons = FindObjectsOfType<DefenderButton>();
-        foreach (var button in buttons) {
+        foreach ( var button in buttons ) {
             button.SetInactive();
         }
 

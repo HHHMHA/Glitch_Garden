@@ -4,7 +4,7 @@ using UnityEngine;
 public class DefenderSpawner : MonoBehaviour {
     [SerializeField] private GameObject defender;
     private GameObject currentDefender;
-    
+
     private void OnMouseDown() {
         SpawnDefender();
     }

@@ -14,11 +14,17 @@ public class Projectile : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D( Collider2D other ) {
-        var health = other.GetComponent<Health>();
-        var attacker = other.GetComponent<Attacker>();
-        if (!health || !attacker)
+        if ( !CanBeDamaged( other ) )
             return;
+        
+        var health = other.GetComponent<Health>();
         health.DealDamage( damage );
         Destroy( gameObject );
+    }
+
+    private static bool CanBeDamaged( Component component ) {
+        var health = component.GetComponent<Health>();
+        var attacker = component.GetComponent<Attacker>();
+        return health && attacker;
     }
 }
