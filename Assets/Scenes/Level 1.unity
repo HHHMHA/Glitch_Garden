@@ -331,33 +331,12 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 1881529981362513793}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &613264708 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2049821650463653255, guid: e84ced90eeea2a249b7d8ab5f7ab7cee,
-    type: 3}
-  m_PrefabInstance: {fileID: 2049821651059069123}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &613264709 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2049821650463653254, guid: e84ced90eeea2a249b7d8ab5f7ab7cee,
     type: 3}
   m_PrefabInstance: {fileID: 2049821651059069123}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &613264710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 613264708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3722570817a93e043957dc48a7eadf25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 4764013540753344746, guid: 1549b17c4047cfb4587b938f4037dd44, type: 3}
-  minSpawnDelay: 1
-  maxSpawnDelay: 5
 --- !u!1 &656510326
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,6 +634,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1549b17c4047cfb4587b938f4037dd44, type: 3}
+--- !u!114 &1162694778 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4764013540753344662, guid: 1549b17c4047cfb4587b938f4037dd44,
+    type: 3}
+  m_PrefabInstance: {fileID: 1162694777}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca54d7482d3e82489e430b770850c5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1298787190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1400,6 +1391,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 656510327}
     m_Modifications:
+    - target: {fileID: 613264710, guid: e84ced90eeea2a249b7d8ab5f7ab7cee, type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 1162694778}
     - target: {fileID: 2049821650463653254, guid: e84ced90eeea2a249b7d8ab5f7ab7cee,
         type: 3}
       propertyPath: m_RootOrder

@@ -2,7 +2,7 @@
 using UnityEngine;
 
 public class AttackerSpawner : MonoBehaviour {
-    [SerializeField] private GameObject prefab;
+    [SerializeField] private Attacker prefab;
     [SerializeField] private int minSpawnDelay = 1;
     [SerializeField] private int maxSpawnDelay = 5;
 
@@ -15,8 +15,8 @@ public class AttackerSpawner : MonoBehaviour {
 
     private IEnumerator Spawner() {
         while ( spawn ) {
-            Instantiate( prefab, transform.position, Quaternion.identity );
-            minSpawnDelay = 1;
+            var attacker = Instantiate( prefab, transform.position, Quaternion.identity ) as Attacker;
+            attacker.transform.parent = transform;
             yield return new WaitForSeconds( Random.Range( minSpawnDelay, maxSpawnDelay ) );
         }
     }
