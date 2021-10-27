@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3722570817a93e043957dc48a7eadf25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 4764013540753344662, guid: 1549b17c4047cfb4587b938f4037dd44, type: 3}
   minSpawnDelay: 1
   maxSpawnDelay: 5
