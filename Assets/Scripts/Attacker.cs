@@ -13,6 +13,16 @@ public class Attacker : MonoBehaviour {
 
     private void Update() {
         transform.Translate( Vector2.left * ( currentSpeed * Time.deltaTime ) );
+        UpdateAnimationState();
+    }
+    private void UpdateAnimationState() {
+        StopAttackingOnTargetLoss();
+    }
+    private void StopAttackingOnTargetLoss() {
+        if ( currentTarget )
+            return;
+
+        animator.SetBool( IsAttacking, false );
     }
 
     public void SetMovementSpeed( float speed ) {
@@ -22,5 +32,16 @@ public class Attacker : MonoBehaviour {
     public void Attack( GameObject target ) {
         animator.SetBool( IsAttacking, true );
         currentTarget = target;
+    }
+
+    public void StrikeCurrentTarget( float damage ) {
+        if ( !currentTarget )
+            return;
+
+        var health = currentTarget.GetComponent<Health>();
+        if ( !health )
+            return;
+
+        health.DealDamage( damage );
     }
 }

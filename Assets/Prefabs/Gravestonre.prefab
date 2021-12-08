@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 5219366673193407264}
   - component: {fileID: 5219366673193407265}
   - component: {fileID: 1027773447674322780}
+  - component: {fileID: 2373658711907497957}
   m_Layer: 0
   m_Name: Gravestonre
   m_TagString: Untagged
@@ -147,3 +148,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starCost: 150
+--- !u!114 &2373658711907497957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5219366673193407295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25bac2099b8646d49743899edadf9001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 200
+  deathFX: {fileID: 0}
