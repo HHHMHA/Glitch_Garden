@@ -9,11 +9,15 @@ public class Fox : MonoBehaviour {
     private void OnTriggerEnter2D( Collider2D other ) {
         var otherGameObject = other.gameObject;
 
-        if ( IsGraveStone( otherGameObject ) )
+        if ( IsGraveStone( otherGameObject ) ) {
             JumpOver( otherGameObject );
+            return;
+        }
 
-        if ( IsDefender( otherGameObject ) )
+        if ( IsDefender( otherGameObject ) ) {
             Attack( otherGameObject );
+        }
+        
     }
 
     private static bool IsGraveStone( GameObject otherGameObject ) {

@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 1027773447674322780}
   - component: {fileID: 2373658711907497957}
   - component: {fileID: -6417438739041348548}
+  - component: {fileID: 7169463606760082967}
   m_Layer: 0
   m_Name: Gravestonre
   m_TagString: Untagged
@@ -175,3 +176,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c242cd65f4298a644af2e3d193765d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &7169463606760082967
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5219366673193407295}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00663352, y: 0.13930479}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.42951345, y: 0.7744588}
+  m_EdgeRadius: 0
