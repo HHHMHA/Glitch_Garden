@@ -1,16 +1,23 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class AttackerSpawner : MonoBehaviour {
+public class AttackerSpawner : MonoBehaviour, IObserver {
     [SerializeField] private Attacker[] attackerPrefabArray;
     [SerializeField] private int minSpawnDelay = 1;
     [SerializeField] private int maxSpawnDelay = 5;
+    private GameTimer timer;
 
     private bool spawn = true;
 
 
     private void Start() {
         StartCoroutine( Spawner() );
+        timer = FindObjectOfType<GameTimer>();
+        timer.AddOnLevelTimerEndListener( this );
+    }
+
+    private void StopSpawning() {
+        spawn = false;
     }
 
     private IEnumerator Spawner() {
@@ -28,5 +35,8 @@ public class AttackerSpawner : MonoBehaviour {
     private Attacker GetAttackerPrefab() {
         var attackerIndex = Random.Range( 0, attackerPrefabArray.Length );
         return attackerPrefabArray[ attackerIndex ];
+    }
+    public void SendEventCompleteMessage() {
+        StopSpawning();
     }
 }

@@ -8,6 +8,8 @@ public class GameTimer : MonoBehaviour {
     [SerializeField] [Tooltip( "Level time in seconds." )]
     private float levelTimeSeconds = 10;
 
+    private readonly List<IObserver> observers = new List<IObserver>();
+
     private Slider slider;
 
     private void Start() {
@@ -26,7 +28,17 @@ public class GameTimer : MonoBehaviour {
         UpdateSliderProgress();
 
         if ( LevelTimeFinished ) {
+            NotifyListeners();
             Debug.Log( "Done" );
+        }
+    }
+    public void AddOnLevelTimerEndListener( IObserver observer ) {
+        observers.Add( observer );
+    }
+
+    private void NotifyListeners() {
+        foreach ( var observer in observers ) {
+            observer.SendEventCompleteMessage();
         }
     }
 }
