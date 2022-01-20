@@ -16,6 +16,10 @@ public class LevelLoader : MonoBehaviour
     public void LoadGameOverScreenWithDelay() {
         StartCoroutine( LoadSceneWithDelay( GameOverSceneIndex ) );
     }
+    
+    public void LoadNextSceneWithDelay() {
+        StartCoroutine( LoadSceneWithDelay( SceneManager.GetActiveScene().buildIndex + 1 ) );
+    }
 
     private IEnumerator LoadSceneWithDelay( int sceneIndex ) {
         yield return new WaitForSeconds( loadDelay );
