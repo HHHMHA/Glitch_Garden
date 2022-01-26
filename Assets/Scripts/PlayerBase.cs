@@ -9,6 +9,7 @@ public class PlayerBase : MonoBehaviour {
         livesDisplay.TakeLive();
         if ( livesDisplay.IsDead() ) {
             FindObjectOfType<LevelLoader>().LoadGameOverScreenWithDelay();
+            FindObjectOfType<LevelController>().HandleLoseCondition();
         }
     }
 }

@@ -9,11 +9,13 @@ public class LevelController : MonoBehaviour, IObserver {
     private int NumberOfAttackers => FindObjectsOfType<Attacker>().Length;
     private GameTimer timer;
     [SerializeField] private GameObject winLabel;
+    [SerializeField] private GameObject loseLabel;
 
     private void Start() {
         timer = FindObjectOfType<GameTimer>();
         timer.AddOnLevelTimerEndListener( this );
         winLabel.SetActive( false );
+        loseLabel.SetActive( false );
     }
 
     public void SendEventCompleteMessage() {
@@ -34,5 +36,9 @@ public class LevelController : MonoBehaviour, IObserver {
     private void HandleWinCondition() {
         winLabel.SetActive( true );
         GetComponent<LevelLoader>().LoadNextSceneWithDelay();
+    }
+    public void HandleLoseCondition() {
+        loseLabel.SetActive( true );
+        Time.timeScale = 0;
     }
 }

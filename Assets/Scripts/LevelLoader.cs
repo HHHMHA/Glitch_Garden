@@ -17,11 +17,17 @@ public class LevelLoader : MonoBehaviour
         StartCoroutine( LoadSceneWithDelay( GameOverSceneIndex ) );
     }
     
+    public void RestartScene() {
+        StartCoroutine( LoadSceneWithDelay( SceneManager.GetActiveScene().buildIndex ) );
+    }
+    
     public void LoadNextSceneWithDelay() {
         StartCoroutine( LoadSceneWithDelay( SceneManager.GetActiveScene().buildIndex + 1 ) );
     }
 
     private IEnumerator LoadSceneWithDelay( int sceneIndex ) {
+        // Make Sure We return to normal time
+        Time.timeScale = 1;
         yield return new WaitForSeconds( loadDelay );
         SceneManager.LoadScene( sceneIndex );
     }
